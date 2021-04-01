@@ -4,12 +4,11 @@ namespace App\Controller;
 
 use App\Entity\User;
 use App\Form\RegisterType;
-
+use http\Env\Response;
+use Symfony\Component\Routing\Annotation\Route;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
-
-
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 class RegisterController extends AbstractController
@@ -37,7 +36,7 @@ class RegisterController extends AbstractController
             $user->setPassword($password);
             //dd($user);
             // Enregistrer les info dans la base
-
+            //Sans doctrine
            $this->entityManager->persist($user);
             $this->entityManager->flush();
 
