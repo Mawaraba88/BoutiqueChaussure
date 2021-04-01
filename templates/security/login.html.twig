@@ -3,6 +3,7 @@
 {% block title %}Se connecter{% endblock %}
 
 {% block content%}
+    <div class="block-small">
 <form method="post">
     {% if error %}
         <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
@@ -35,8 +36,13 @@
         </div>
     #}
     <hr>
-    <button class="btn btn-lg btn-primary btn-sm" type="submit">
+    <button class="btn btn-lg btn-info btn-block mt-3" type="submit">
         Se connecter
     </button>
+
+    <hr>
+    <p class="text-center"><a href="{{path('reset_password') }}">Mot de passe oublié</a></p>
+    <p class="text-center">Ou souhaitez-vous <a href="{{ path('register')}}">Crée un compte</a></p>
 </form>
+    </div>
 {% endblock %}
