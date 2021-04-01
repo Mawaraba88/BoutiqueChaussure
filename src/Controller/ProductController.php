@@ -2,9 +2,12 @@
 
 namespace App\Controller;
 
+use App\Classe\Search;
 use App\Entity\Product;
+use App\Form\SearchType;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -20,14 +23,26 @@ class ProductController extends AbstractController
     /**
      * @Route("/nos-produits", name="products")
      */
-    public function index(): Response
+    public function index(Request $request): Response
     {
-        //recuperation de tous les produits en passant par le repository de la classe en question
-        $products = $this->entityManager->getRepository(Product::class)->findAll();
+        //pour passer un formulaire à twig
+        $search = new Search();
+        $form = $this->createForm(SearchType::class, $search);
+
+        //recuperation de la requete envoyé par url
+        $form->handleRequest($request);
+        if($form->isSubmitted()&&$form->isValid()){
+            $products = $this->entityManager->getRepository(Product::class)->findwithSearch($search);
+        }else{
+            //recuperation de tous les produits en passant par le repository de la classe en question
+            $products = $this->entityManager->getRepository(Product::class)->findAll();
+        }
 
         return $this->render('product/index.html.twig', [
             //variable qui peremet d'afficher tous les produits
-            'products'=>$products
+            'products'=>$products,
+            //passage d'un formulaire à twig
+            'form'=>$form->createView()
         ]);
     }
 
