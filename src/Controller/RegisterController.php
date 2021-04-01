@@ -37,6 +37,7 @@ class RegisterController extends AbstractController
             $user->setPassword($password);
             //dd($user);
             // Enregistrer les info dans la base
+
            $this->entityManager->persist($user);
             $this->entityManager->flush();
 
