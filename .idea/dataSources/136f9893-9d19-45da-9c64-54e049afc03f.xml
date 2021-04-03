@@ -8,7 +8,7 @@
     </root>
     <schema id="2" parent="1" name="dbshoes">
       <Current>1</Current>
-      <Collation>utf8_general_ci</Collation>
+      <Collation>utf8mb4_general_ci</Collation>
     </schema>
     <schema id="3" parent="1" name="information_schema">
       <Collation>utf8_general_ci</Collation>
@@ -1054,206 +1054,196 @@
     <table id="334" parent="2" name="address">
       <Collation>utf8mb4_unicode_ci</Collation>
     </table>
-    <table id="335" parent="2" name="category">
+    <table id="335" parent="2" name="carrier">
       <Collation>utf8mb4_unicode_ci</Collation>
     </table>
-    <table id="336" parent="2" name="doctrine_migration_versions">
+    <table id="336" parent="2" name="category">
+      <Collation>utf8mb4_unicode_ci</Collation>
+    </table>
+    <table id="337" parent="2" name="doctrine_migration_versions">
       <Collation>utf8_unicode_ci</Collation>
     </table>
-    <table id="337" parent="2" name="product">
+    <table id="338" parent="2" name="order">
       <Collation>utf8mb4_unicode_ci</Collation>
     </table>
-    <table id="361" parent="11" name="category"/>
-    <table id="362" parent="11" name="doctrine_migration_versions"/>
-    <table id="363" parent="11" name="order">
+    <table id="339" parent="2" name="order_details">
       <Collation>utf8mb4_unicode_ci</Collation>
     </table>
-    <table id="364" parent="11" name="order_details">
+    <table id="340" parent="2" name="product">
       <Collation>utf8mb4_unicode_ci</Collation>
     </table>
-    <table id="365" parent="11" name="product"/>
-    <table id="366" parent="11" name="reset_password"/>
-    <table id="367" parent="11" name="user"/>
-    <column id="368" parent="359" name="id">
+    <table id="341" parent="2" name="reset_password">
+      <Collation>utf8mb4_unicode_ci</Collation>
+    </table>
+    <table id="342" parent="2" name="user">
+      <Collation>utf8mb4_unicode_ci</Collation>
+    </table>
+    <column id="343" parent="334" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="369" parent="359" name="user_id">
+    <column id="344" parent="334" name="user_id">
       <Position>2</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="370" parent="359" name="name">
+    <column id="345" parent="334" name="name">
       <Position>3</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="371" parent="359" name="firstname">
+    <column id="346" parent="334" name="firstname">
       <Position>4</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="372" parent="359" name="lastname">
+    <column id="347" parent="334" name="lastname">
       <Position>5</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="373" parent="359" name="company">
+    <column id="348" parent="334" name="company">
       <Position>6</Position>
       <DataType>varchar(255)|0s</DataType>
     </column>
-    <column id="374" parent="359" name="address">
+    <column id="349" parent="334" name="address">
       <Position>7</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="375" parent="359" name="postal">
+    <column id="350" parent="334" name="postal">
       <Position>8</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="376" parent="359" name="city">
+    <column id="351" parent="334" name="city">
       <Position>9</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="377" parent="359" name="country">
+    <column id="352" parent="334" name="country">
       <Position>10</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="378" parent="359" name="phone">
+    <column id="353" parent="334" name="phone">
       <Position>11</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="379" parent="359" name="IDX_D4E6F81A76ED395">
+    <index id="354" parent="334" name="IDX_D4E6F81A76ED395">
       <ColNames>user_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="380" parent="359" name="PRIMARY">
+    <key id="355" parent="334" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="381" parent="359" name="FK_D4E6F81A76ED395">
+    <foreign-key id="356" parent="334" name="FK_D4E6F81A76ED395">
       <ColNames>user_id</ColNames>
       <RefTableName>user</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="354" parent="335" name="id">
+    <column id="357" parent="335" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="355" parent="335" name="name">
+    <column id="358" parent="335" name="name">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <key id="356" parent="335" name="PRIMARY">
+    <column id="359" parent="335" name="description">
+      <Position>3</Position>
+      <DataType>longtext|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="360" parent="335" name="price">
+      <Position>4</Position>
+      <DataType>double|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="361" parent="335" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="357" parent="336" name="version">
+    <column id="362" parent="336" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>null</SequenceIdentity>
+    </column>
+    <column id="363" parent="336" name="name">
+      <Position>2</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="364" parent="336" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="365" parent="337" name="version">
       <Position>1</Position>
       <DataType>varchar(191)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="358" parent="336" name="executed_at">
+    <column id="366" parent="337" name="executed_at">
       <Position>2</Position>
       <DataType>datetime|0s</DataType>
     </column>
-    <column id="359" parent="336" name="execution_time">
+    <column id="367" parent="337" name="execution_time">
       <Position>3</Position>
       <DataType>int(11)|0s</DataType>
     </column>
-    <key id="360" parent="336" name="PRIMARY">
+    <key id="368" parent="337" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
+      <ColNames>version</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="361" parent="337" name="id">
+    <column id="369" parent="338" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="362" parent="337" name="category_id">
+    <column id="370" parent="338" name="user_id">
       <Position>2</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="363" parent="337" name="name">
+    <column id="371" parent="338" name="created_at">
       <Position>3</Position>
-      <DataType>varchar(255)|0s</DataType>
+      <DataType>datetime|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="364" parent="337" name="slug">
+    <column id="372" parent="338" name="carrier_name">
       <Position>4</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="365" parent="337" name="illustration">
+    <column id="373" parent="338" name="carrier_price">
       <Position>5</Position>
-      <DataType>varchar(255)|0s</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="366" parent="337" name="subtitle">
-      <Position>6</Position>
-      <DataType>varchar(255)|0s</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="367" parent="337" name="description">
-      <Position>7</Position>
-      <DataType>longtext|0s</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="368" parent="337" name="price">
-      <Position>8</Position>
       <DataType>double|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="369" parent="337" name="IDX_D34A04AD12469DE2">
-      <ColNames>category_id</ColNames>
-      <Type>btree</Type>
-    </index>
-    <key id="370" parent="337" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <foreign-key id="371" parent="337" name="FK_D34A04AD12469DE2">
-      <ColNames>category_id</ColNames>
-      <RefTableName>category</RefTableName>
-      <RefColNames>id</RefColNames>
-    </foreign-key>
-    <column id="372" parent="338" name="id">
-      <Position>1</Position>
-      <DataType>int(11)|0s</DataType>
-      <NotNull>1</NotNull>
-      <SequenceIdentity>null</SequenceIdentity>
-    </column>
-    <column id="373" parent="338" name="user_id">
-      <Position>2</Position>
-      <DataType>int(11)|0s</DataType>
+    <column id="374" parent="338" name="delivery">
+      <Position>6</Position>
+      <DataType>longtext|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="374" parent="338" name="token">
-      <Position>3</Position>
-      <DataType>varchar(255)|0s</DataType>
+    <column id="375" parent="338" name="is_paid">
+      <Position>7</Position>
+      <DataType>tinyint(1)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="375" parent="338" name="created_at">
-      <Position>4</Position>
-      <DataType>datetime|0s</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <index id="376" parent="338" name="IDX_B9983CE5A76ED395">
+    <index id="376" parent="338" name="IDX_F5299398A76ED395">
       <ColNames>user_id</ColNames>
       <Type>btree</Type>
     </index>
@@ -1262,7 +1252,7 @@
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="378" parent="338" name="FK_B9983CE5A76ED395">
+    <foreign-key id="378" parent="338" name="FK_F5299398A76ED395">
       <ColNames>user_id</ColNames>
       <RefTableName>user</RefTableName>
       <RefColNames>id</RefColNames>
@@ -1273,35 +1263,33 @@
       <NotNull>1</NotNull>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="380" parent="339" name="email">
+    <column id="380" parent="339" name="my_order_id">
       <Position>2</Position>
-      <DataType>varchar(180)|0s</DataType>
+      <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="381" parent="339" name="roles">
+    <column id="381" parent="339" name="product">
       <Position>3</Position>
-      <Comment>(DC2Type:json)</Comment>
-      <DataType>longtext|0s</DataType>
+      <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="382" parent="339" name="password">
+    <column id="382" parent="339" name="quantity">
       <Position>4</Position>
-      <DataType>varchar(255)|0s</DataType>
+      <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="383" parent="339" name="firstname">
+    <column id="383" parent="339" name="price">
       <Position>5</Position>
-      <DataType>varchar(255)|0s</DataType>
+      <DataType>double|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="384" parent="339" name="lastname">
+    <column id="384" parent="339" name="total">
       <Position>6</Position>
-      <DataType>varchar(255)|0s</DataType>
+      <DataType>double|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="385" parent="339" name="UNIQ_8D93D649E7927C74">
-      <ColNames>email</ColNames>
-      <Unique>1</Unique>
+    <index id="385" parent="339" name="IDX_845CA2C1BFCDF877">
+      <ColNames>my_order_id</ColNames>
       <Type>btree</Type>
     </index>
     <key id="386" parent="339" name="PRIMARY">
@@ -1309,7 +1297,144 @@
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="387" parent="339" name="UNIQ_8D93D649E7927C74">
+    <foreign-key id="387" parent="339" name="FK_845CA2C1BFCDF877">
+      <ColNames>my_order_id</ColNames>
+      <RefTableName>order</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="388" parent="340" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>null</SequenceIdentity>
+    </column>
+    <column id="389" parent="340" name="category_id">
+      <Position>2</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="390" parent="340" name="name">
+      <Position>3</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="391" parent="340" name="slug">
+      <Position>4</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="392" parent="340" name="illustration">
+      <Position>5</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="393" parent="340" name="subtitle">
+      <Position>6</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="394" parent="340" name="description">
+      <Position>7</Position>
+      <DataType>longtext|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="395" parent="340" name="price">
+      <Position>8</Position>
+      <DataType>double|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="396" parent="340" name="IDX_D34A04AD12469DE2">
+      <ColNames>category_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="397" parent="340" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="398" parent="340" name="FK_D34A04AD12469DE2">
+      <ColNames>category_id</ColNames>
+      <RefTableName>category</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="399" parent="341" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>null</SequenceIdentity>
+    </column>
+    <column id="400" parent="341" name="user_id">
+      <Position>2</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="401" parent="341" name="token">
+      <Position>3</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="402" parent="341" name="created_at">
+      <Position>4</Position>
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="403" parent="341" name="IDX_B9983CE5A76ED395">
+      <ColNames>user_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="404" parent="341" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="405" parent="341" name="FK_B9983CE5A76ED395">
+      <ColNames>user_id</ColNames>
+      <RefTableName>user</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="406" parent="342" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>null</SequenceIdentity>
+    </column>
+    <column id="407" parent="342" name="email">
+      <Position>2</Position>
+      <DataType>varchar(180)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="408" parent="342" name="roles">
+      <Position>3</Position>
+      <Comment>(DC2Type:json)</Comment>
+      <DataType>longtext|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="409" parent="342" name="password">
+      <Position>4</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="410" parent="342" name="firstname">
+      <Position>5</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="411" parent="342" name="lastname">
+      <Position>6</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="412" parent="342" name="UNIQ_8D93D649E7927C74">
+      <ColNames>email</ColNames>
+      <Unique>1</Unique>
+      <Type>btree</Type>
+    </index>
+    <key id="413" parent="342" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="414" parent="342" name="UNIQ_8D93D649E7927C74">
       <ColNames>email</ColNames>
       <UnderlyingIndexName>UNIQ_8D93D649E7927C74</UnderlyingIndexName>
     </key>
