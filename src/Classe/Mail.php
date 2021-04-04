@@ -22,7 +22,7 @@ class Mail
             'Messages' => [
                 [
                     'From' => [
-                        'Email' => "anadyeven@gmail.com",
+                        'Email' => "shoesboutique9@gmail.com",
                         'Name' => "Shoes&Shop"
                     ],
                     'To' => [

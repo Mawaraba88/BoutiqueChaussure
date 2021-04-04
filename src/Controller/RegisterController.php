@@ -50,7 +50,7 @@ class RegisterController extends AbstractController
 
                 //envoi d'email au client
                 $mail = new Mail();
-                $content = "Bonjour".$user->getFirstname()."<br/>Bienvenue sur la première boutique idéale pour vos pieds.";
+                $content = "Bonjour ".$user->getFirstname()."<br/>Bienvenue sur la première boutique idéale pour vos pieds.";
                 $mail->send($user->getEmail(), $user->getFirstname(), 'Bienvenue sur la Boutique Shoes&Shop', $content);
 
                 //message de la notification
