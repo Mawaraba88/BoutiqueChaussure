@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mon achat{% endblock %}
+
+{% block content %}
+
+<h1>Payer par carte</h1>
+
+                    <!-- Card -->
+                    <div class="card wish-list pb-1">
+                        <div class="card-body">
+
+                            <div class="md-form md-outline mt-2">
+                                <label for="form14">Numéro de carte bancaire </label> <input
+                                        type="text" required id="form14"
+                                        placeholder="numero de carte bancaire" class="form-control">
+                            </div>
+
+                            <div class="md-form md-outline mt-2">
+                                <label for="form14">Date d'expiration</label> <input type="date"
+                                                                                 required id="form14" placeholder="" class="form-control">
+                            </div>
+                            <div class="md-form md-outline mt-2">
+                                <label for="form14">Cryptogramme </label> <input type="text"
+                                                                                 required id="form14" placeholder="CVC" class="form-control">
+                            </div>
+
+                            <div>
+                                <br>
+                                    <a href="{{ path('buy-card') }}" class="btn btn-success btn-block mt-3">Payer | {{((total / 100) + carrier.price)|number_format(2, ',', '.')}}€ </a>
+                            </div>
+
+                        </div>
+                    </div>
+
+    </html>
+
+{% endblock %}
